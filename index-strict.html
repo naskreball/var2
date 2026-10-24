@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор тортов - Золотой Колос</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-strict.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <img src="https://zolotoykolos.ru/local/templates/zolotoykolos/images/logo.png" alt="Золотой Колос" onerror="this.src='https://via.placeholder.com/150x40/ffffff/9e1f24?text=ЗОЛОТОЙ+КОЛОС'">
+            <div class="header-contacts">
+                <span>Конструктор тортов</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <div class="page-title">
+            <h1>Соберите свой эксклюзивный торт</h1>
+            <p>Выберите параметры, и мы рассчитаем предварительную стоимость.</p>
+        </div>
+
+        <!-- Шаг 1 -->
+        <div class="step-block">
+            <h2 class="step-heading"><span class="num">1.</span> Выберите повод</h2>
+            <div class="options-grid" id="event-options-strict">
+                <div class="opt-card" onclick="selectStrict('event', 'День Рождения', this)">День Рождения</div>
+                <div class="opt-card" onclick="selectStrict('event', 'День Рождения ребёнка', this)">Детский праздник</div>
+                <div class="opt-card" onclick="selectStrict('event', 'Юбилей', this)">Юбилей</div>
+                <div class="opt-card" onclick="selectStrict('event', 'Свадьба', this)">Свадьба</div>
+                <div class="opt-card" onclick="selectStrict('event', 'Выпускной', this)">Выпускной</div>
+                <div class="opt-card" onclick="selectStrict('event', 'Корпоратив', this)">Корпоратив</div>
+            </div>
+            <input type="text" class="custom-field" placeholder="Или свой праздник..." oninput="selectCustomStrict('event', this.value)">
+        </div>
+
+        <!-- Шаг 2 -->
+        <div class="step-block">
+            <h2 class="step-heading"><span class="num">2.</span> Выберите форму</h2>
+            <div class="options-grid four-cols" id="shape-options-strict">
+                <div class="opt-card" onclick="selectStrict('shape', 'Круг', this)"><div class="ph">Фото</div>Круглый</div>
+                <div class="opt-card" onclick="selectStrict('shape', 'Квадрат', this)"><div class="ph">Фото</div>Квадратный</div>
+                <div class="opt-card" onclick="selectStrict('shape', 'Фигурный', this)"><div class="ph">Фото</div>Фигурный</div>
+                <div class="opt-card" onclick="selectStrict('shape', 'Многоярусный', this)"><div class="ph">Фото</div>Многоярусный</div>
+            </div>
+        </div>
+
+        <!-- Шаг 3 -->
+        <div class="step-block">
+            <h2 class="step-heading"><span class="num">3.</span> Выберите вес</h2>
+            <div class="options-grid" id="weight-options-strict">
+                <div class="opt-card" onclick="selectWeightStrict(2, this)">2 кг</div>
+                <div class="opt-card" onclick="selectWeightStrict(2.5, this)">2.5 кг</div>
+                <div class="opt-card" onclick="selectWeightStrict(3, this)">3 кг</div>
+                <div class="opt-card" onclick="selectWeightStrict(3.5, this)">3.5 кг</div>
+                <div class="opt-card" onclick="selectWeightStrict(4, this)">4 кг</div>
+                <div class="opt-card" onclick="selectWeightStrict(4.5, this)">4.5 кг</div>
+                <div class="opt-card" onclick="selectWeightStrict(5, this)">5 кг</div>
+            </div>
+            <input type="number" class="custom-field" placeholder="Свой вес (кг)" oninput="selectCustomWeightStrict(this.value)">
+            <p class="portions-info" id="portions-strict" style="display:none;">Порций: <b>0</b></p>
+        </div>
+
+        <!-- Шаг 4 -->
+        <div class="step-block">
+            <h2 class="step-heading"><span class="num">4.</span> Начинка</h2>
+            <div class="filling-strict-layout">
+                <div class="filling-cats-strict" id="filling-cats-strict"></div>
+                <div class="filling-items-strict" id="filling-items-strict"></div>
+            </div>
+        </div>
+
+        <!-- Шаг 5 -->
+        <div class="step-block">
+            <h2 class="step-heading"><span class="num">5.</span> Галерея</h2>
+            <div class="gallery-tabs-strict" id="gallery-tabs-strict">
+                <button class="tab-btn active" onclick="switchTabStrict('Праздничные', this)">Праздничные</button>
+                <button class="tab-btn" onclick="switchTabStrict('Свадебные', this)">Свадебные</button>
+                <button class="tab-btn" onclick="switchTabStrict('Юбилейные', this)">Юбилейные</button>
+                <button class="tab-btn" onclick="switchTabStrict('Детские', this)">Детские</button>
+                <button class="tab-btn" onclick="switchTabStrict('Корпоративные', this)">Корпоративные</button>
+            </div>
+            <div class="gallery-grid-strict" id="gallery-grid-strict"></div>
+            <div class="upload-strict">
+                <p>Покажите нам, каким он должен быть, ваш идеальный торт</p>
+                <input type="file" id="file-strict" accept="image/*" onchange="uploadStrict(event)">
+            </div>
+        </div>
+
+        <!-- Шаг 6 -->
+        <div class="step-block">
+            <h2 class="step-heading"><span class="num">6.</span> Надпись</h2>
+            <input type="text" class="custom-field" id="text-strict" placeholder="Текст надписи" oninput="updateStrict()">
+            <label class="check-strict"><input type="checkbox" id="notext-strict" onchange="toggleNoTextStrict(this.checked)"> Никакой, он и так прекрасен</label>
+        </div>
+
+        <!-- Итог -->
+        <div class="summary-strict">
+            <h2>Ваш заказ</h2>
+            <div class="sum-line"><span>Событие:</span> <b id="s-event">-</b></div>
+            <div class="sum-line"><span>Форма:</span> <b id="s-shape">-</b></div>
+            <div class="sum-line"><span>Вес:</span> <b id="s-weight">-</b></div>
+            <div class="sum-line"><span>Порции:</span> <b id="s-portions">-</b></div>
+            <div class="sum-line"><span>Начинка:</span> <b id="s-filling">-</b></div>
+            <div class="sum-line"><span>Надпись:</span> <b id="s-text">-</b></div>
+            <div class="sum-line"><span>Фото:</span> <b id="s-photo">Нет</b></div>
+            <div class="total-strict">Предварительная стоимость: <span id="s-price">0</span> ₽</div>
+            <p class="disclaimer">Точная цена после согласования оформления.</p>
+
+            <div class="form-strict">
+                <input type="text" placeholder="Имя*">
+                <input type="tel" placeholder="Телефон*">
+                <input type="date">
+                <select><option>Самовывоз</option><option>Доставка</option></select>
+                <textarea placeholder="Комментарии"></textarea>
+                <label class="check-strict"><input type="checkbox"> Согласен на обработку ПДН</label>
+                <button class="btn-order-strict" onclick="alert('Заявка отправлена!')">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+    <script src="script-strict.js"></script>
+</body>
+</html>

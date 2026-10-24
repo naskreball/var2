@@ -1,0 +1,56 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; }
+body { background: #fff; color: #333; font-size: 14px; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+.site-header { border-bottom: 1px solid #eee; padding: 15px 0; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; }
+.header-inner img { height: 40px; }
+.header-contacts { font-size: 13px; color: #888; }
+
+.main-container { padding: 40px 20px; }
+.page-title { text-align: center; margin-bottom: 40px; }
+.page-title h1 { font-size: 28px; color: #9e1f24; font-weight: 700; margin-bottom: 10px; }
+.page-title p { color: #666; }
+
+.step-block { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #f0f0f0; }
+.step-heading { font-size: 18px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; }
+.step-heading .num { color: #9e1f24; margin-right: 10px; font-size: 20px; }
+
+.options-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+.four-cols { grid-template-columns: repeat(4, 1fr); }
+.opt-card { border: 1px solid #ddd; border-radius: 4px; padding: 15px; text-align: center; cursor: pointer; transition: 0.2s; font-weight: 600; }
+.opt-card:hover { border-color: #9e1f24; }
+.opt-card.active { border-color: #9e1f24; background: #fff8f8; color: #9e1f24; }
+.opt-card .ph { height: 60px; background: #f5f5f5; margin-bottom: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 11px; }
+
+.custom-field { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; margin-top: 15px; font-size: 14px; }
+.portions-info { margin-top: 10px; font-size: 13px; color: #9e1f24; }
+
+.filling-strict-layout { display: grid; grid-template-columns: 200px 1fr; gap: 20px; }
+.filling-cats-strict { display: flex; flex-direction: column; gap: 5px; }
+.cat-btn-strict { padding: 10px; text-align: left; border: 1px solid #eee; background: #fafafa; cursor: pointer; font-size: 13px; border-radius: 4px; }
+.cat-btn-strict.active { border-color: #9e1f24; background: #fff8f8; color: #9e1f24; font-weight: 600; }
+.filling-items-strict { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 8px; }
+.item-strict { border: 1px solid #eee; padding: 8px; text-align: center; cursor: pointer; border-radius: 4px; font-size: 11px; }
+.item-strict.active { border-color: #9e1f24; background: #fff8f8; }
+.item-strict .ph { height: 50px; background: #f5f5f5; margin-bottom: 5px; border-radius: 2px; }
+
+.gallery-tabs-strict { display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
+.tab-btn { padding: 8px 16px; border: 1px solid #ddd; background: #fff; cursor: pointer; border-radius: 20px; font-size: 13px; }
+.tab-btn.active { background: #9e1f24; color: #fff; border-color: #9e1f24; }
+.gallery-grid-strict { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 8px; }
+.g-item-strict { height: 80px; background: #f5f5f5; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 11px; cursor: pointer; border: 1px solid #eee; }
+.g-item-strict.active { border-color: #9e1f24; background: #fff8f8; }
+.upload-strict { margin-top: 20px; padding: 15px; border: 1px dashed #ccc; border-radius: 4px; text-align: center; }
+.upload-strict p { font-size: 13px; margin-bottom: 10px; color: #666; }
+
+.summary-strict { background: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 30px; margin-top: 40px; }
+.summary-strict h2 { font-size: 20px; color: #9e1f24; margin-bottom: 20px; text-align: center; }
+.sum-line { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+.total-strict { font-size: 22px; font-weight: 700; color: #9e1f24; text-align: right; margin-top: 20px; }
+.disclaimer { font-size: 11px; color: #999; text-align: right; margin-top: 5px; }
+.form-strict { margin-top: 30px; display: flex; flex-direction: column; gap: 12px; }
+.form-strict input, .form-strict select, .form-strict textarea { padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; }
+.check-strict { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #666; cursor: pointer; }
+.btn-order-strict { background: #9e1f24; color: #fff; border: none; padding: 15px; font-size: 16px; font-weight: 700; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+.btn-order-strict:hover { background: #7a1519; }
